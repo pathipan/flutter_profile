@@ -1,6 +1,6 @@
 import 'package:Profile/pages/home.dart';
 import 'package:Profile/pages/profile.dart';
-// import 'package:Profile/pages/dashboard.dart';
+import 'package:Profile/pages/dashboard.dart';
 import 'package:Profile/pages/about.dart';
 import 'package:Profile/pages/settings.dart';
 
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         'profile': (context) => Profile(),
         'about': (context) => About(),
         'settings': (context) => Settings(),
+        'dashboard': (context) => Dashboard(),
       },
       // home: Home() ,
     );

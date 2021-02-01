@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -8,8 +7,6 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   int currentTab = 0; // to keep
-  final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = Dashboard(); // Our first view in vie
 
 
   @override

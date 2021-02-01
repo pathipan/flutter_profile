@@ -24,7 +24,7 @@ class SideDrawer extends StatelessWidget {
                 leading: Icon(Icons.home),
                 onTap: () => Navigator.pushReplacementNamed(
                   context,
-                  'home',
+                  'dashboard',
                 ),
               ),
               ListTile(

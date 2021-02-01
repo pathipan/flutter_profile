@@ -37,11 +37,6 @@ class _HomeState extends State<Home> {
         child: currentScreen,
         bucket: bucket,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 10,
@@ -54,7 +49,7 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: 95,
                     onPressed: () {
                       setState(() {
                         currentScreen =
@@ -67,19 +62,19 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.home,
-                          color: currentTab == 0 ? Colors.blue : Colors.grey,
+                          color: currentTab == 0 ? Colors.blue : Colors.purpleAccent,
                         ),
                         Text(
                           'หน้าแรก',
                           style: TextStyle(
-                            color: currentTab == 0 ? Colors.blue : Colors.grey,
+                            color: currentTab == 0 ? Colors.blue : Colors.purpleAccent,
                           ),
                         ),
                       ],
                     ),
                   ),
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: 95,
                     onPressed: () {
                       setState(() {
                         currentScreen =
@@ -92,27 +87,19 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.person,
-                          color: currentTab == 1 ? Colors.blue : Colors.grey,
+                          color: currentTab == 1 ? Colors.blue : Colors.purpleAccent,
                         ),
                         Text(
                           'โปรไฟล์',
                           style: TextStyle(
-                            color: currentTab == 1 ? Colors.blue : Colors.grey,
+                            color: currentTab == 1 ? Colors.blue : Colors.purpleAccent,
                           ),
                         ),
                       ],
                     ),
-                  )
-                ],
-              ),
-
-              // Right Tab bar icons
-
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
+                  ),
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: 95,
                     onPressed: () {
                       setState(() {
                         currentScreen =
@@ -125,19 +112,19 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.history_edu,
-                          color: currentTab == 2 ? Colors.blue : Colors.grey,
+                          color: currentTab == 2 ? Colors.blue : Colors.purpleAccent,
                         ),
                         Text(
                           'เกี่ยวกับเรา',
                           style: TextStyle(
-                            color: currentTab == 2 ? Colors.blue : Colors.grey,
+                            color: currentTab == 2 ? Colors.blue : Colors.purpleAccent,
                           ),
                         ),
                       ],
                     ),
                   ),
                   MaterialButton(
-                    minWidth: 40,
+                    minWidth: 95,
                     onPressed: () {
                       setState(() {
                         currentScreen =
@@ -150,19 +137,19 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.settings,
-                          color: currentTab == 3 ? Colors.blue : Colors.grey,
+                          color: currentTab == 3 ? Colors.blue : Colors.purpleAccent,
                         ),
                         Text(
                           'ตั้งค่า',
                           style: TextStyle(
-                            color: currentTab == 3 ? Colors.blue : Colors.grey,
+                            color: currentTab == 3 ? Colors.blue : Colors.purpleAccent,
                           ),
                         ),
                       ],
                     ),
                   )
                 ],
-              )
+              ),
             ],
           ),
         ),
