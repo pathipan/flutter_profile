@@ -1,10 +1,9 @@
-import 'package:Profile/pages/profile.dart';
-import 'package:Profile/pages/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:Profile/side_drawer.dart';
-
-import 'About.dart';
-import 'dashboard.dart';
+import 'package:Profile/pages/components/profile.dart';
+import 'package:Profile/pages/components/settings.dart';
+import 'package:Profile/pages/components/About.dart';
+import 'package:Profile/pages/components/dashboard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -28,11 +27,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-            title: Text('Flutter Profile'),
-            
-          ),
-          drawer: SideDrawer(),
-
+        title: Text('หน้าแรก'),
+      ),
+      drawer: SideDrawer(),
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
@@ -62,12 +59,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.home,
-                          color: currentTab == 0 ? Colors.blue : Colors.purpleAccent,
+                          color: currentTab == 0
+                              ? Colors.red
+                              : Colors.purpleAccent,
                         ),
                         Text(
                           'หน้าแรก',
                           style: TextStyle(
-                            color: currentTab == 0 ? Colors.blue : Colors.purpleAccent,
+                            color: currentTab == 0
+                                ? Colors.red
+                                : Colors.purpleAccent,
                           ),
                         ),
                       ],
@@ -87,12 +88,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.person,
-                          color: currentTab == 1 ? Colors.blue : Colors.purpleAccent,
+                          color: currentTab == 1
+                              ? Colors.blue
+                              : Colors.purpleAccent,
                         ),
                         Text(
                           'โปรไฟล์',
                           style: TextStyle(
-                            color: currentTab == 1 ? Colors.blue : Colors.purpleAccent,
+                            color: currentTab == 1
+                                ? Colors.blue
+                                : Colors.purpleAccent,
                           ),
                         ),
                       ],
@@ -112,12 +117,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.history_edu,
-                          color: currentTab == 2 ? Colors.blue : Colors.purpleAccent,
+                          color: currentTab == 2
+                              ? Colors.green
+                              : Colors.purpleAccent,
                         ),
                         Text(
                           'เกี่ยวกับเรา',
                           style: TextStyle(
-                            color: currentTab == 2 ? Colors.blue : Colors.purpleAccent,
+                            color: currentTab == 2
+                                ? Colors.green
+                                : Colors.purpleAccent,
                           ),
                         ),
                       ],
@@ -137,12 +146,16 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Icon(
                           Icons.settings,
-                          color: currentTab == 3 ? Colors.blue : Colors.purpleAccent,
+                          color: currentTab == 3
+                              ? Colors.yellow
+                              : Colors.purpleAccent,
                         ),
                         Text(
                           'ตั้งค่า',
                           style: TextStyle(
-                            color: currentTab == 3 ? Colors.blue : Colors.purpleAccent,
+                            color: currentTab == 3
+                                ? Colors.yellow
+                                : Colors.purpleAccent,
                           ),
                         ),
                       ],

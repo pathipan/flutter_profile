@@ -1,9 +1,27 @@
-// import 'package:cached_network_image/cached_network_image.dart';
+import 'package:Profile/pages/profile.dart';
+import 'package:Profile/pages/settings.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_ui_challenges/core/presentation/res/assets.dart';
+import 'package:Profile/side_drawer.dart';
 
-class Settings extends StatelessWidget {
-  // static final String path = "lib/src/pages/settings/settings3.dart";
+import 'About.dart';
+import 'dashboard.dart';
+
+class Settings extends StatefulWidget {
+  @override
+  _SettingsState createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
+  int currentTab = 3; // to keep track of active tab index
+  final List<Widget> screens = [
+    Dashboard(),
+    About(),
+    Profile(),
+    Settings(),
+  ]; // to store nested tabs
+  final PageStorageBucket bucket = PageStorageBucket();
+  Widget currentScreen = Settings(); // to keep
+
   final TextStyle headerStyle = TextStyle(
     color: Colors.grey.shade800,
     fontWeight: FontWeight.bold,
@@ -13,6 +31,11 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
+      appBar: AppBar(
+        title: Text('หน้าแรก'),
+        backgroundColor: Colors.yellow,
+      ),
+      drawer: SideDrawer(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -99,11 +122,147 @@ class Settings extends StatelessWidget {
               child: ListTile(
                 leading: Icon(Icons.exit_to_app),
                 title: Text("Logout"),
-                onTap: () {},
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  'dashboard',
+                ),
               ),
             ),
             const SizedBox(height: 60.0),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 10,
+        child: Container(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  MaterialButton(
+                    minWidth: 95,
+                    onPressed: () {
+                      setState(() {
+                        currentScreen =
+                            Dashboard(); // if user taps on this dashboard tab will be active
+                        currentTab = 0;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.home,
+                          color: currentTab == 0
+                              ? Colors.red
+                              : Colors.purpleAccent,
+                        ),
+                        Text(
+                          'หน้าแรก',
+                          style: TextStyle(
+                            color: currentTab == 0
+                                ? Colors.red
+                                : Colors.purpleAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 95,
+                    onPressed: () {
+                      setState(() {
+                        currentScreen =
+                            Profile(); // if user taps on this dashboard tab will be active
+                        currentTab = 1;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.person,
+                          color: currentTab == 1
+                              ? Colors.blue
+                              : Colors.purpleAccent,
+                        ),
+                        Text(
+                          'โปรไฟล์',
+                          style: TextStyle(
+                            color: currentTab == 1
+                                ? Colors.blue
+                                : Colors.purpleAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 95,
+                    onPressed: () {
+                      setState(() {
+                        currentScreen =
+                            About(); // if user taps on this dashboard tab will be active
+                        currentTab = 2;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.history_edu,
+                          color: currentTab == 2
+                              ? Colors.green
+                              : Colors.purpleAccent,
+                        ),
+                        Text(
+                          'เกี่ยวกับเรา',
+                          style: TextStyle(
+                            color: currentTab == 2
+                                ? Colors.green
+                                : Colors.purpleAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 95,
+                    onPressed: () {
+                      setState(() {
+                        currentScreen =
+                            Settings(); // if user taps on this dashboard tab will be active
+                        currentTab = 3;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.settings,
+                          color: currentTab == 3
+                              ? Colors.yellow
+                              : Colors.purpleAccent,
+                        ),
+                        Text(
+                          'ตั้งค่า',
+                          style: TextStyle(
+                            color: currentTab == 3
+                                ? Colors.yellow
+                                : Colors.purpleAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

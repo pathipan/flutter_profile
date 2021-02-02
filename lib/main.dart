@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: true,
       routes: {
         'home': (context) => Home(),
+        'dashboard': (context) => Dashboard(),
         'profile': (context) => Profile(),
         'about': (context) => About(),
         'settings': (context) => Settings(),
-        'dashboard': (context) => Dashboard(),
       },
       // home: Home() ,
     );
